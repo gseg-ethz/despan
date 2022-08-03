@@ -161,4 +161,4 @@ cython_debug/
 
 
 # Hydra log files
-src/outputs
+src/outputs/
