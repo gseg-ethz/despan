@@ -34,7 +34,8 @@ class _AppSettings:
     greedy_file_types: list[str]
 
     def __post_init__(self):
-        object.__setattr__(self, 'greedy')
+        object.__setattr__(self, 'greedy_file_types',
+                           [ft if ft[0] == "." else f".{ft}" for ft in self.greedy_file_types])
 
 
 @dataclass(init=False, frozen=True)
