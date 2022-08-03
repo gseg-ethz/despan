@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "DeSpAn"
+description = "Short description of DeSpAn"
+requires-python = "==3.9.*"
+keywords = ["one", "two"]
+license = {text = "Proprietary"}
+authors = [
+	{name = "Nicholas Meyer"},
+	{email = "meyernic@ethz.ch"},
+]
+dynamic = ["version", "readme"]
+classifiers = [
+	"Programming Language :: Python :: 3"
+]
+dependencies = [
+	"numpy ~= 1.23",
+	"plyfile ~= 0.7",
+	"laspy[lazrs,laszip] ~= 2.2",
+	"PyYAML ~= 6.0",
+]
+
+[tool.setuptools.dynamic]
+version = {attr = "DeSpAn.__version__"}
+readme = {file = ["README.rst"]}
+
+[project.urls]
+homepage = "https://gseg.igp.ethz.ch/"
+documentation = "https://google.com"
+repository = "https://gseg-ethz.github.com/DeSpAn"
+
+[project.scripts]
+DeSpAn = "DeSpAn.cli:main"
