@@ -1,12 +1,10 @@
 project_meta:
-  _target_: DeSpAn.config._ProjectMeta
-  name: Flamatt
-  epoch1_name: Epoch1
-  epoch2_name: Epoch2
+  name: Flamattv2
+  epoch1_name: Epoch1_1
+  epoch2_name: Epoch2_1
 
 app_settings:
-  _target_: DeSpAn.config._AppSettings
-  retain_intensities: True
+  retain_intensities: False
   filter_ground_points: True
   save_intermediate_results: True
   greedy_directory_search: True
@@ -15,10 +13,8 @@ app_settings:
     - las
 
 paths:
-  _target_: DeSpAn.config._Paths
   pcd_e1: E:\13_REASSESS\00_test_data\Flamatt\01_Input\20180322_Lausanne_Bern_U204134_Fabing_Helimap\Raw\LiDAR
   pcd_e2: E:\13_REASSESS\00_test_data\Flamatt\01_Input\20200304_Flamatt_U225557_Ackermann_Helimap\Raw\LiDAR
 #  pcd_e1: E:\13_REASSESS\00_test_data\Flamatt\02_intermediate\20220727-165822_border_cut_M3C2.ply
 #  pcd_e2: E:\13_REASSESS\00_test_data\Flamatt\02_intermediate\20220727-170604.npy
-  CC_exe: C:\Program Files\CloudCompare\CloudCompare.exe
   intermediate_results: E:\13_REASSESS\00_test_data\Flamatt\02_intermediate

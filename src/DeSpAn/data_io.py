@@ -5,6 +5,10 @@ import numpy as np
 import laspy
 from plyfile import PlyElement, PlyData
 
+from DeSpAn.config import RunConfig
+
+# run_cfg = RunConfig()
+
 
 def get_point_cloud_data(data_path, data_name=None, *args, **kwargs):
     if data_path.is_dir():

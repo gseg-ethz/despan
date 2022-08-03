@@ -21,6 +21,8 @@ dependencies = [
 	"plyfile ~= 0.7",
 	"laspy[lazrs,laszip] ~= 2.2",
 	"PyYAML ~= 6.0",
+	"omegaconf ~= 2.2",
+	"hydra-core ~= 1.2",
 ]
 
 [tool.setuptools.dynamic]
