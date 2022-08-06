@@ -70,6 +70,7 @@ instance/
 
 # Sphinx documentation
 docs/_build/
+docs/build/
 
 # PyBuilder
 .pybuilder/
@@ -162,6 +163,3 @@ cython_debug/
 
 # Hydra log files
 src/DeSpAn/outputs/
-
-# Sphinx Documentation
-docs/build/

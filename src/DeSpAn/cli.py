@@ -17,32 +17,32 @@ RUN_CFG = RunConfig()
 
 def main() -> int:
 
-    # filter_functions = ("classification", lambda npa: npa == 2) if RUN_CFG.app_settings.filter_ground_points else None
-    # pcd_e1 = get_point_cloud_data(RUN_CFG.paths.pcd_e1,
-    #                               pcd_file_types=RUN_CFG.app_settings.greedy_file_types,
-    #                               greedy=RUN_CFG.app_settings.greedy_directory_search,
-    #                               scalar_fields=["classification", "intensity"],
-    #                               filter_functions=filter_functions)
+    filter_functions = [("classification", lambda npa: npa == 2)] if RUN_CFG.app_settings.filter_ground_points else None
+    pcd_e1 = get_point_cloud_data(RUN_CFG.paths.pcd_e1,
+                                  pcd_file_types=RUN_CFG.app_settings.greedy_file_types,
+                                  greedy=RUN_CFG.app_settings.greedy_directory_search,
+                                  scalar_fields=["classification", "intensity"],
+                                  filter_functions=filter_functions)
+
+    pcd_e2 = get_point_cloud_data(RUN_CFG.paths.pcd_e2,
+                                  pcd_file_types=RUN_CFG.app_settings.greedy_file_types,
+                                  greedy=RUN_CFG.app_settings.greedy_directory_search,
+                                  scalar_fields=["classification", "intensity"],
+                                  filter_functions=filter_functions)
     #
-    # pcd_e2 = get_point_cloud_data(RUN_CFG.paths.pcd_e2,
-    #                               pcd_file_types=RUN_CFG.app_settings.greedy_file_types,
-    #                               greedy=RUN_CFG.app_settings.greedy_directory_search,
-    #                               scalar_fields=["classification", "intensity"],
-    #                               filter_functions=filter_functions)
-    # #
-    # save_ply(RUN_CFG.paths.intermediate_results / f"01a_{RUN_CFG.project_meta.epoch1_name}_merged.ply",
-    #          pcd_e1)
-    #
-    # save_ply(RUN_CFG.paths.intermediate_results / f"01b_{RUN_CFG.project_meta.epoch2_name}_merged.ply",
-    #          pcd_e2)
+    save_ply(RUN_CFG.paths.intermediate_results / f"01a_{RUN_CFG.project_meta.epoch1_name}_merged.ply",
+             pcd_e1)
+
+    save_ply(RUN_CFG.paths.intermediate_results / f"01b_{RUN_CFG.project_meta.epoch2_name}_merged.ply",
+             pcd_e2)
     #
 
-    pcd_e1_path = Path("E:\\13_REASSESS\\00_test_data\\Flamatt\\02_intermediate\\01a_Epoch1_merged.ply")
-    pcd_e2_path = Path("E:\\13_REASSESS\\00_test_data\\Flamatt\\02_intermediate\\01b_Epoch2_merged.ply")
-
-    pcd_e1 = load_ply(pcd_e1_path)
-    pcd_e2 = load_ply(pcd_e2_path)
-
+    # pcd_e1_path = Path("E:\\13_REASSESS\\00_test_data\\Flamatt\\02_intermediate\\01a_Epoch1_merged.ply")
+    # pcd_e2_path = Path("E:\\13_REASSESS\\00_test_data\\Flamatt\\02_intermediate\\01b_Epoch2_merged.ply")
+    #
+    # pcd_e1 = load_ply(pcd_e1_path)
+    # pcd_e2 = load_ply(pcd_e2_path)
+    #
     cut_to_common_box((pcd_e1, pcd_e2))
 
     pcd_e1_path_boxcut = RUN_CFG.paths.intermediate_results / f"02a_{RUN_CFG.project_meta.epoch1_name}_boxcut.ply"
@@ -98,11 +98,11 @@ def main() -> int:
                               '-LOG_FILE', f"{RUN_CFG.paths.intermediate_results / 'log_m3c2.log'}",
                               '-C_EXPORT_FMT', 'PLY',
                               '-AUTO_SAVE', 'OFF',
-                              '-O', '-GLOBAL_SHIFT', *[f"{x:.3f}" for x in offset_xy], "0.0", f"{path_e1_border_cut}",
-                              '-O', '-GLOBAL_SHIFT', *[f"{x:.3f}" for x in offset_xy], "0.0", f"{path_e2_border_cut}",
-                              '-M3C2', f"{path_m3c2_ini}",
+                              '-O', '-GLOBAL_SHIFT', *[f"{x:.3f}" for x in offset_xy], "0.0", f"{pcd_e1_path_bordercut}",
+                              '-O', '-GLOBAL_SHIFT', *[f"{x:.3f}" for x in offset_xy], "0.0", f"{pcd_e2_path_bordercut}",
+                              '-M3C2', f"{RUN_CFG.paths.m3c2_settings}",
                               '-SET_ACTIVE_SF', '8',
-                              '-SF_COLOR_SCALE', f"{path_color_map}",
+                              '-SF_COLOR_SCALE', f"{RUN_CFG.paths.hsv_settings}",
                               '-SF_CONVERT_TO_RGB', 'FALSE',
                               '-SAVE_CLOUDS',
                               ],

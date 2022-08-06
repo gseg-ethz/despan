@@ -22,3 +22,5 @@ paths:
 #  pcd_e2: E:\13_REASSESS\00_test_data\Flamatt\02_intermediate\20220727-170604.npy
   CC_exe: C:\Program Files\CloudCompare\CloudCompare.exe
   intermediate_results: E:\13_REASSESS\00_test_data\Flamatt\02_intermediate
+  m3c2_settings: E:\13_REASSESS\99_code\src\DeSpAn\conf\m3c2\m3c2_params_0.2_0.2_2_proj_0.3.txt
+  hsv_settings:  E:\13_REASSESS\99_code\src\DeSpAn\conf\m3c2\HSV_5mm.xml

@@ -45,11 +45,14 @@ class _Paths:
     CC_exe: Path = field(compare=False)
     intermediate_results: Path
 
-    def __init__(self, pcd_e1: str, pcd_e2: str, CC_exe: str, intermediate_results: str) -> None:
+    def __init__(self, pcd_e1: str, pcd_e2: str, CC_exe: str, intermediate_results: str, m3c2_settings: str,
+                 hsv_settings: str) -> None:
         object.__setattr__(self, 'pcd_e1', Path(pcd_e1).absolute())
         object.__setattr__(self, 'pcd_e2', Path(pcd_e2).absolute())
         object.__setattr__(self, 'CC_exe', Path(CC_exe).absolute())
         object.__setattr__(self, 'intermediate_results', Path(intermediate_results).absolute())
+        object.__setattr__(self, 'm3c2_settings', Path(m3c2_settings).absolute())
+        object.__setattr__(self, 'hsv_settings', Path(hsv_settings).absolute())
 
 
 @dataclass(init=False, frozen=True)
@@ -63,11 +66,11 @@ class RunConfig(metaclass=Singleton):
         parser.add_argument('-cf', '--config_file', type=str,
                             help='Location of a configuration file to use',
                             # TODO: REMOVE DEFAULT VALUE
-                            default=".\\specific_config.yaml")
+                            default=".\\conf\\specific_config.yaml")
         # TODO: Add the additional configuration arguments
         args = parser.parse_args()
 
-        with initialize_config_module(version_base=None, config_module="DeSpAn"):
+        with initialize_config_module(version_base=None, config_module="DeSpAn.conf"):
             default_cfg = compose(config_name="default_config")
 
         file_config_path = Path(args.config_file).absolute()

@@ -13,7 +13,7 @@ def get_point_cloud_data(data_path: Path,
                          pcd_file_types: list[str] = None,
                          greedy: bool = False,
                          scalar_fields: list[str] = None,
-                         filter_functions: list[Tuple[str, Callable[[np.ndarray],
+                         filter_functions: Iterable[Tuple[str, Callable[[np.ndarray],
                                                                     np.ndarray[Any, np.dtype[bool]]]]] = None
                          ) -> PointCloudData:
     """
@@ -32,7 +32,7 @@ def get_point_cloud_data(data_path: Path,
         Additional search in subdirectories.
     scalar_fields : list[str], optional
         Scalar fields to keep.
-    filter_functions : list[tuple[str, func]]
+    filter_functions : Iterable[tuple[str, func]]
         List of filter functions to run on the data. Each filter function is represented by the scalar field string and
         a function which takes one value and returns a boolean.
 

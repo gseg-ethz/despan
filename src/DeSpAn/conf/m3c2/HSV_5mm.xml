@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CloudCompare>
+    <ColorScale version="1">
+        <Properties>
+            <name>Blue&gt;Turquois&gt;Green&gt;Yellow&gt;Red (5mm)</name>
+            <uuid>{db48143a-ac21-4f70-ae39-514646940166}</uuid>
+            <absolute>1</absolute>
+            <minValue>-0.05</minValue>
+            <range>0.1</range>
+        </Properties>
+        <Data>
+            <step r="0" g="0" b="255" pos="0"/>
+            <step r="85" g="255" b="255" pos="0.25"/>
+            <step r="0" g="255" b="0" pos="0.5"/>
+            <step r="255" g="255" b="0" pos="0.75"/>
+            <step r="255" g="0" b="0" pos="1"/>
+        </Data>
+    </ColorScale>
+</CloudCompare>
