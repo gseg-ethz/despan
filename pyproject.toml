@@ -23,6 +23,7 @@ dependencies = [
 	"PyYAML ~= 6.0",
 	"omegaconf ~= 2.2",
 	"hydra-core ~= 1.2",
+	"alphashape ~= 1.3"
 ]
 
 [tool.setuptools.dynamic]
@@ -36,3 +37,6 @@ repository = "https://gseg-ethz.github.com/DeSpAn"
 
 [project.scripts]
 DeSpAn = "DeSpAn.cli:main"
+
+[project.optional-dependencies]
+doc = ["sphinx ~= 5.1"]

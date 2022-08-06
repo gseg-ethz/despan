@@ -162,3 +162,6 @@ cython_debug/
 
 # Hydra log files
 src/DeSpAn/outputs/
+
+# Sphinx Documentation
+docs/build/

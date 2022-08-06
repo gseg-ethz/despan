@@ -1,7 +1,7 @@
 project_meta:
   name: Flamattv2
-  epoch1_name: Epoch1_1
-  epoch2_name: Epoch2_1
+  epoch1_name: Epoch1
+  epoch2_name: Epoch2
 
 app_settings:
   retain_intensities: False
