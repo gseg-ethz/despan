@@ -1,12 +1,11 @@
 project_meta:
-  name: Flamattv2
-  epoch1_name: Epoch1
-  epoch2_name: Epoch2
+  name: Flamatt
+  epoch1_name: 2018-03-22
+  epoch2_name: 2020-03-04
 
 app_settings:
-  retain_intensities: False
+  retain_intensities: True
   filter_ground_points: True
-  save_intermediate_results: True
   greedy_directory_search: True
   greedy_file_types:
     - laz
@@ -15,6 +14,4 @@ app_settings:
 paths:
   pcd_e1: E:\13_REASSESS\00_test_data\Flamatt\01_Input\20180322_Lausanne_Bern_U204134_Fabing_Helimap\Raw\LiDAR
   pcd_e2: E:\13_REASSESS\00_test_data\Flamatt\01_Input\20200304_Flamatt_U225557_Ackermann_Helimap\Raw\LiDAR
-#  pcd_e1: E:\13_REASSESS\00_test_data\Flamatt\02_intermediate\20220727-165822_border_cut_M3C2.ply
-#  pcd_e2: E:\13_REASSESS\00_test_data\Flamatt\02_intermediate\20220727-170604.npy
   intermediate_results: E:\13_REASSESS\00_test_data\Flamatt\02_intermediate

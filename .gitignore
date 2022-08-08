@@ -162,4 +162,4 @@ cython_debug/
 
 
 # Hydra log files
-src/DeSpAn/outputs/
+DeSpAn/outputs/

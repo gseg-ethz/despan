@@ -7,10 +7,7 @@ import numpy as np
 import laspy
 from plyfile import PlyElement, PlyData
 
-from DeSpAn.config import RunConfig
 from DeSpAn.geometry import PointCloudData, merge_pcd
-
-RUN_CFG = RunConfig()
 
 
 def find_pcd_in_directory(directory_path, pcd_file_types: list[str], greedy: bool = True) -> list[Path]:
@@ -157,10 +154,6 @@ def load_laz(pcd_path, retain_colors: bool = True, scalar_fields: list[str] = No
     pcd = laspy.read(pcd_path)
     laz_scalar_fields = list(pcd.point_format.dimension_names)
 
-
-    # pt_mask = [True] * len(pcd) if not RUN_CFG.app_settings.filter_ground_points or "classification" not in laz_scalar_fields else pcd.classification == 2
-
-    # xyz = pcd[pt_mask].xyz
 
     colors = None
     if retain_colors and len(set(laz_scalar_fields) & set(["red", "green", "blue"])) == 3:
