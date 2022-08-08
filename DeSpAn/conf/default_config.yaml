@@ -13,11 +13,11 @@ app_settings:
     - laz
     - las
 
-paths:
+paths: # Paths can either be defined absolute or with respect to base DeSpAn module folder
   _target_: DeSpAn.config._Paths
   pcd_e1:
   pcd_e2:
   intermediate_results:
   CC_exe: C:\Program Files\CloudCompare\CloudCompare.exe
-  m3c2_settings: E:\13_REASSESS\99_code\src\DeSpAn\conf\m3c2\m3c2_params_0.2_0.2_2_proj_0.3.txt
-  hsv_settings:  E:\13_REASSESS\99_code\src\DeSpAn\conf\m3c2\HSV_5mm.xml
+  m3c2_settings: .\conf\m3c2\m3c2_params_0.2_0.2_2_proj_0.3.txt
+  hsv_settings:  .\conf\m3c2\HSV_5mm.xml

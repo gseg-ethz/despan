@@ -1,5 +1,6 @@
 __all__ = ["RunConfig"]
 
+import os
 import argparse
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -92,6 +93,12 @@ class RunConfig(metaclass=Singleton):
             run_cfg_dict = OmegaConf.merge(default_cfg, file_cfg)
         else:
             run_cfg_dict = default_cfg
+
+        for k, p in run_cfg_dict.paths.items():
+            if not k == "_target_":
+                if p is not None and not Path(p).is_absolute():
+                    root_dir = Path(os.path.dirname(os.path.abspath(__file__)))
+                    run_cfg_dict.paths[k] = f"{(root_dir / run_cfg_dict.paths[k]).resolve()}"
 
         for key, value in args.__dict__.items():
             if key == "epoch1":

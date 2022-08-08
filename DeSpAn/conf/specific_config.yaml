@@ -11,7 +11,7 @@ app_settings:
     - laz
     - las
 
-paths:
+paths: # Paths can either be defined absolute or with respect to base DeSpAn module folder
   pcd_e1: E:\13_REASSESS\00_test_data\Flamatt\01_Input\20180322_Lausanne_Bern_U204134_Fabing_Helimap\Raw\LiDAR
   pcd_e2: E:\13_REASSESS\00_test_data\Flamatt\01_Input\20200304_Flamatt_U225557_Ackermann_Helimap\Raw\LiDAR
   intermediate_results: E:\13_REASSESS\00_test_data\Flamatt\02_intermediate
