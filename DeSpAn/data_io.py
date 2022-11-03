@@ -74,6 +74,10 @@ def save_ply(pcd_path: Path, pcd: PointCloudData, retain_colors: bool = True, re
     # TODO: Rename program in comment
     el = PlyElement.describe(pcd_np_st, "vertex", comments=["Created with dranjan/python-plyfile in REASSESS program",
                                                             f"Created {datetime.now():%Y-%m-%dT%H:%M:%S}"])
+
+    if not pcd_path.parent.exists():
+        pcd_path.parent.mkdir(parents=True, exist_ok=True)
+
     PlyData([el]).write(f"{pcd_path}")
 
 
@@ -157,10 +161,10 @@ def load_laz(pcd_path, retain_colors: bool = True, scalar_fields: list[str] = No
 
     colors = None
     if retain_colors and len(set(laz_scalar_fields) & set(["red", "green", "blue"])) == 3:
-        colors = np.empty((pcd.header.point_count, 3,), dtype=np.uint16)
-        colors[:, 0] = pcd["red"]
-        colors[:, 1] = pcd["green"]
-        colors[:, 2] = pcd["blue"]
+        colors = np.empty((pcd.header.point_count, 3,), dtype=np.uint8)
+        colors[:, 0] = (pcd["red"] / 256).astype(np.uint8)
+        colors[:, 1] = (pcd["green"] / 256).astype(np.uint8)
+        colors[:, 2] = (pcd["blue"] / 256).astype(np.uint8)
 
     common_scalar_fields = laz_scalar_fields if scalar_fields is None else list(set(scalar_fields) &
                                                                                 set(laz_scalar_fields))

@@ -150,7 +150,7 @@ def merge_pcd(pcds: Iterable[PointCloudData]) -> PointCloudData:
     del xyz
     gc.collect()
 
-    color_np = np.vstack(tuple(color)) if color is not None else None #
+    color_np = np.vstack(tuple(color)) if color is not None else None  #
     del color
     gc.collect()
 
@@ -168,5 +168,3 @@ def merge_pcd(pcds: Iterable[PointCloudData]) -> PointCloudData:
     scalar_fields = {sf_key: np.hstack(tuple(sf)) for sf_key, sf in scalar_fields.items()}
 
     return PointCloudData(xyz_np, color=color_np, normals=normals_np, scalar_fields=scalar_fields)
-
-
