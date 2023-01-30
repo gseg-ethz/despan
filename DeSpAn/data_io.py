@@ -1,3 +1,5 @@
+## TODO: Rework to use yield instead of generating a list and iterating over it
+
 from datetime import datetime
 from itertools import compress
 from pathlib import Path

@@ -1,7 +1,7 @@
 project_meta:
-  name: Flamatt
-  epoch1_name: 2018-03-22
-  epoch2_name: 2020-03-04
+  name: ROSS
+  epoch1_name: 2020
+  epoch2_name: 2022
 
 app_settings:
   retain_intensities: True
@@ -10,8 +10,9 @@ app_settings:
   greedy_file_types:
     - laz
     - las
+    - ply
 
 paths: # Paths can either be defined absolute or with respect to base DeSpAn module folder
-  pcd_e1: E:\13_REASSESS\00_test_data\Flamatt\01_Input\20180322_Lausanne_Bern_U204134_Fabing_Helimap\Raw\LiDAR
-  pcd_e2: E:\13_REASSESS\00_test_data\Flamatt\01_Input\20200304_Flamatt_U225557_Ackermann_Helimap\Raw\LiDAR
-  intermediate_results: E:\13_REASSESS\00_test_data\Flamatt\02_intermediate
+  pcd_e1: C:\scratch\16_SBB_F2S3\01_data\00_ingest\2020_ROSS\01_LAZ
+  pcd_e2: C:\scratch\16_SBB_F2S3\01_data\00_ingest\2022_ROS2\01_LAZ
+  intermediate_results: C:\scratch\16_SBB_F2S3\01_data\01_processing\01_filtered_ground_points

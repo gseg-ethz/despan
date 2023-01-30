@@ -17,7 +17,8 @@ def get_point_cloud_data(data_path: Path,
                                                                     np.ndarray[Any, np.dtype[bool]]]]] = None
                          ) -> PointCloudData:
     """
-    Load *point cloud data*  from either a file or directory (possible inclusion of subdirectories).
+    Load *point cloud data*  from either a file or directory (possible inclusion of subdirectories). In case of a
+    directory, the data will be merged to a single pcd.
 
 
 
@@ -63,7 +64,7 @@ def get_point_cloud_data(data_path: Path,
         print(f"{pcd.xyz.shape[0]:,d}")
         return pcd
     else:
-        raise NotImplementedError
+        raise FileNotFoundError
 
 
 # def cut_to_common_outline_border(pcds: Iterable[PointCloudData]) -> None:
