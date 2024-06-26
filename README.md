@@ -24,7 +24,7 @@ the user can specify if prior to performing M3C2 the data shall be filtered to o
 `classification` label according to the [LAS 1.4 specifications](https://www.asprs.org/wp-content/uploads/2010/12/LAS_1_4_r13.pdf)).
 
 DeSpAn has a three-tiered configuration structure (listed based on priority):
-1. Command line arguments[data_io.py](DeSpAn%2Fdata_io.py)
+1. Command line arguments
 2. Specific configuration file
 3. Default configuration file
 
