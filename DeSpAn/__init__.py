@@ -2,4 +2,4 @@
 
 __author__ = "Nicholas Meyer"
 __email__ = "meyernic@ethz.ch"
-__version__ = "0.1.0"
+__version__ = "1.0.0"

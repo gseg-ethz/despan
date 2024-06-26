@@ -5,8 +5,8 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "DeSpAn"
 description = "Short description of DeSpAn"
-requires-python = "==3.9.*"
-keywords = ["one", "two"]
+requires-python = "~=3.11"
+keywords = ["LiDAR", "Deformation Analy"]
 license = {text = "Proprietary"}
 authors = [
 	{name = "Nicholas Meyer"},
@@ -14,7 +14,8 @@ authors = [
 ]
 dynamic = ["version", "readme"]
 classifiers = [
-	"Programming Language :: Python :: 3"
+	"Programming Language :: Python :: 3",
+	"Private :: Do Not Upload" # REMOVE BEFORE FLIGHT -- PyPI will always reject packages with classifiers beginning with Private ::
 ]
 dependencies = [
 	"numpy ~= 1.23",
@@ -28,11 +29,11 @@ dependencies = [
 
 [tool.setuptools.dynamic]
 version = {attr = "DeSpAn.__version__"}
-readme = {file = ["README.rst"]}
+readme = {file = ["README.md"]}
 
 [project.urls]
 homepage = "https://gseg.igp.ethz.ch/"
-documentation = "https://google.com"
+#documentation = "https://google.com"
 repository = "https://gseg-ethz.github.com/DeSpAn"
 
 [project.scripts]

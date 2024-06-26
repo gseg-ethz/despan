@@ -64,7 +64,7 @@ class PointCloudData:
     # def copy(self) -> PointCloudData:
     #     xyz = self.xyz.copy()
 
-        return PointCloudData(self.xyz.copy())
+    #    return PointCloudData(self.xyz.copy())
 
     def filter(self, sf_filter: str, truth_func: Callable[[np.ndarray], np.ndarray[Any, np.dtype[bool]]]) -> None:
         """
