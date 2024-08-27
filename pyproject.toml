@@ -31,6 +31,9 @@ dependencies = [
 version = {attr = "DeSpAn.__version__"}
 readme = {file = ["README.md"]}
 
+[tool.setuptools.package-data]
+"DeSpAn" = ["conf/*.yaml", "conf/m3c2/*"]
+
 [project.urls]
 homepage = "https://gseg.igp.ethz.ch/"
 #documentation = "https://google.com"
